@@ -222,11 +222,25 @@
         <div class="row">
             <div class="col">
                 <div class="card bg-transparent">
-                    <div class="card-header d-flex justify-content-between bg-transparent">
-                        <h4>The best seller</h4>
+                    <div class="card-header bg-transparent d-flex justify-content-between bg-transparent border-bottom border-primary">
+                        <h4 class=" text-primary h2 fw-bold">The best seller</h4>
                         <div class="div">
-                            <i class=" fa fa-solid fa-angle-left p-3"></i>
-                            <i class=" fa fa-solid fa-angle-right p-3 fs-3 text-secondary"></i>
+                            <i class=" fa fa-solid fa-angle-left fs-1 px-3 text-primary"></i>
+                            <i class=" fa fa-solid fa-angle-right px-3 fs-1 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 a0tgu">
+                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold">hello</h6>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
