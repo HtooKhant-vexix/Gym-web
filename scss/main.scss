@@ -1,0 +1,65 @@
+$font-family-sans-serif: 'Roboto Mono', monospace;
+$info: #121212;
+$input-color: #080808;
+$warning: #00b815;
+$black: #1C1B22;
+$dark: #2B2A33;
+$primary: #00f51de8;
+$navbar-nav-link-padding-x: 1.6rem;
+$nav-link-font-size: 1.2rem;
+$nav-link-font-weight: 700;
+$nav-link-color: white;
+
+//bg #00112c
+//green #15ff30ee
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,700;1,500&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+ 
+.bgimg{
+    background-image: url(../image/bg.jpg);
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.gymbg{
+    background-image: url(../image/gym.jpg);
+    min-height: 500px;
+    background-attachment: scroll;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mminus{
+    margin-top: -5%;
+}
+.cbg{
+    // min-height: 500px;
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    min-width: 30%;
+}
+.g1{
+    background-image: url(../image/g1.jpg);
+}
+.g2{
+    background-image: url(../image/g2.jpg);
+}
+.g3{
+    background-image: url(../image/g3.jpg);
+}
+
+.modal-backdrop {
+    display: none;
+}
+.index{
+    z-index: 1000;
+}
+
+  
