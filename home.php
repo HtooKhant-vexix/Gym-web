@@ -80,12 +80,12 @@
                                 <!-- logout -->
                                 <?php if($_SESSION['role']=="user" or $_SESSION['role']=="admin"): ?>
                                     <a href="logout.php" class="btn btn-outline-primary ms-3">Log out</a>
-                                    <span class="fs-5 text-white fw-bold ms-3 px-4 pt-1 bg-secondary rounded rounded-pill"> <?php echo $_SESSION['name']?></span>
+                                    <span class="fs-5 text-white fw-bold ms-3 px-4 bg-secondary rounded rounded-pill border border-primary"> <?php echo $_SESSION['name']?></span>
                                 <?php endif ?>
                                 <!-- register  name-->
                                 <?php if($_SESSION['count']== 1): ?>
                                     <a href="logout.php" class="btn btn-outline-primary">Log out</a>
-                                    <span class="fs-5 text-white fw-bold ms-3 px-4 pt-1 bg-secondary rounded rounded-pill"> <?php echo $_SESSION['regname']?></span>
+                                    <span class="fs-5 text-white fw-bold ms-3 px-4 bg-secondary rounded rounded-pill border border-primary"> <?php echo $_SESSION['regname']?></span>
                                 <?php endif ?>
                                 <!-- Button trigger modal -->
                                 <?php if($_SESSION['role']!="user" && $_SESSION['role']!="admin" && $_SESSION['count']!= 1): ?>
@@ -197,19 +197,19 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 p-3">
-                <div class="car">
+                <div class="card bg-transparent shadow">
                     <div class="card-body cbg g1">
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 p-3">
-                <div class="car">
+                <div class="card bg-transparent shadow">
                     <div class="card-body cbg g2">
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 p-3">
-                <div class="car">
+                <div class="card bg-transparent shadow">
                     <div class="card-body cbg g3">
                     </div>
                 </div>
@@ -527,14 +527,29 @@
         </div>
     </div>
 </div>
-<div class="container-fluid my-5">
+<div class="container-fluid mt-5">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 ">
-                <img src="./image/1545.jpg" class="w-100" alt="">
+        <div class="row d-flex justify-content-around" >
+            <div class="col-lg-3">
+                <div class="card bg-transparent shadow opacity-75 h-100">
+                    <div class="c1 cbg">
+                        <h1 class="fw-bold justify-content-center d-flex align-items-center h-100 text-white display-3">MEN</h1>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-6 ">
-                <img src="./image/1545.jpg" class="w-100" alt="">
+            <div class="col-lg-5">
+                <div class="card bg-transparent shadow opacity-75 h-100">
+                    <div class="c2 cbg">
+                        <h1 class="fw-bold justify-content-center d-flex align-items-center h-100 text-white display-3">ACCESSORIES</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card bg-transparent shadow opacity-75 h-100">
+                    <div class="c3 cbg">
+                        <h1 class="fw-bold justify-content-center d-flex align-items-center h-100 text-white display-3">WOMEN</h1>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -639,7 +654,15 @@
         </div>
     </div>
 </div>
-
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                
+            </div>
+        </div>
+    </div>
+</div>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

@@ -2201,7 +2201,7 @@ textarea.form-control-lg {
   background-size: contain;
   border: 1px solid rgba(28, 27, 34, 0.25);
   appearance: none;
-  color-adjust: exact;
+  /* color-adjust: exact; */
 }
 .form-check-input[type=checkbox] {
   border-radius: 0.25em;
@@ -10148,6 +10148,18 @@ textarea.form-control-lg {
 
 .g3 {
   background-image: url(../image/g3.jpg);
+}
+
+.c1 {
+  background-image: url(../image/man.jpg);
+}
+
+.c2 {
+  background-image: url(../image/acce.jpg);
+}
+
+.c3 {
+  background-image: url(../image/girl.jpg);
 }
 
 .modal-backdrop {
