@@ -79,7 +79,7 @@
                                 <button class="btn btn-primary"><i class="fa fa-solid fa-cart-shopping"></i></button>
                                 <!-- logout -->
                                 <?php if($_SESSION['role']=="user" or $_SESSION['role']=="admin"): ?>
-                                    <a href="logout.php" class="btn btn-outline-primary">Log out</a>
+                                    <a href="logout.php" class="btn btn-outline-primary ms-3">Log out</a>
                                     <span class="fs-5 text-white fw-bold ms-3 px-4 pt-1 bg-secondary rounded rounded-pill"> <?php echo $_SESSION['name']?></span>
                                 <?php endif ?>
                                 <!-- register  name-->
@@ -224,7 +224,7 @@
             <div class="col">
                 <div class="card bg-transparent">
                     <div class="card-header bg-transparent d-flex justify-content-between bg-transparent border-bottom border-primary">
-                        <h4 class=" text-primary h2 fw-bold">The best seller</h4>
+                        <h4 class=" text-primary h2 fw-bold">Best seller</h4>
                         <div class="div">
                             <i class=" fa fa-solid fa-angle-left fs-1 px-3 text-primary"></i>
                             <i class=" fa fa-solid fa-angle-right px-3 fs-1 text-primary"></i>
@@ -234,9 +234,9 @@
                         <div class="row">
                             <div class="col-6 col-md-3 col-lg-2">
                                 <div class="card border-0 bg-black">
-                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
                                     <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
                                         <p class="text-center text-white-50 mb-0">200000mmk</p>
                                     </div>
                                     <div class=" justify-content-between d-flex mb-2 px-2">
@@ -247,9 +247,9 @@
                             </div>
                             <div class="col-6 col-md-3 col-lg-2">
                                 <div class="card border-0 bg-black">
-                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
                                     <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
                                         <p class="text-center text-white-50 mb-0">200000mmk</p>
                                     </div>
                                     <div class=" justify-content-between d-flex mb-2 px-2">
@@ -260,9 +260,9 @@
                             </div>
                             <div class="col-6 col-md-3 col-lg-2">
                                 <div class="card border-0 bg-black">
-                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
                                     <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
                                         <p class="text-center text-white-50 mb-0">200000mmk</p>
                                     </div>
                                     <div class=" justify-content-between d-flex mb-2 px-2">
@@ -273,9 +273,9 @@
                             </div>
                             <div class="col-6 col-md-3 col-lg-2">
                                 <div class="card border-0 bg-black">
-                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
                                     <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
                                         <p class="text-center text-white-50 mb-0">200000mmk</p>
                                     </div>
                                     <div class=" justify-content-between d-flex mb-2 px-2">
@@ -286,9 +286,9 @@
                             </div>
                             <div class="col-6 col-md-3 col-lg-2">
                                 <div class="card border-0 bg-black">
-                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
                                     <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
                                         <p class="text-center text-white-50 mb-0">200000mmk</p>
                                     </div>
                                     <div class=" justify-content-between d-flex mb-2 px-2">
@@ -299,9 +299,9 @@
                             </div>
                             <div class="col-6 col-md-3 col-lg-2">
                                 <div class="card border-0 bg-black">
-                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
                                     <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
                                         <p class="text-center text-white-50 mb-0">200000mmk</p>
                                     </div>
                                     <div class=" justify-content-between d-flex mb-2 px-2">
@@ -310,6 +310,7 @@
                                     </div>
                                 </div>
                             </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -317,8 +318,327 @@
         </div>
     </div>
 </div>
-
-
+<div class="container-fluid mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="./image/dis.jpg" class="w-100" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card bg-transparent">
+                    <div class="card-header bg-transparent d-flex justify-content-between bg-transparent border-bottom border-primary">
+                        <h4 class=" text-primary h2 fw-bold">Gym equiment</h4>
+                        <div class="div">
+                            <i class=" fa fa-solid fa-angle-left fs-1 px-3 text-primary"></i>
+                            <i class=" fa fa-solid fa-angle-right px-3 fs-1 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card bg-transparent">
+                    <div class="card-header bg-transparent d-flex justify-content-between bg-transparent border-bottom border-primary">
+                        <h4 class=" text-primary h2 fw-bold">Accessories</h4>
+                        <div class="div">
+                            <i class=" fa fa-solid fa-angle-left fs-1 px-3 text-primary"></i>
+                            <i class=" fa fa-solid fa-angle-right px-3 fs-1 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 ">
+                <img src="./image/1545.jpg" class="w-100" alt="">
+            </div>
+            <div class="col-lg-6 ">
+                <img src="./image/1545.jpg" class="w-100" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card bg-transparent">
+                    <div class="card-header bg-transparent d-flex justify-content-between bg-transparent border-bottom border-primary">
+                        <h4 class=" text-primary h2 fw-bold">Protein</h4>
+                        <div class="div">
+                            <i class=" fa fa-solid fa-angle-left fs-1 px-3 text-primary"></i>
+                            <i class=" fa fa-solid fa-angle-right px-3 fs-1 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     </body>
