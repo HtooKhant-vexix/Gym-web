@@ -49,7 +49,7 @@
     }
     ?>
 
-<body class="bg-black" style="height: 3000px;">
+<body class="bg-dark" style="height: 3000px;">
     <div class="container-fluid bg-black  position-sticky top-0 index">
         <div class="container">
             <div class="row">
@@ -76,7 +76,7 @@
                                 </li>
                             </ul>
                             <div class="d-flex" role="search">
-                                <a href="#" class="btn"><i class="fa fa-solid fa-cart-shopping text-primary fs-4 "></i></a>
+                                <button class="btn btn-primary"><i class="fa fa-solid fa-cart-shopping"></i></button>
                                 <!-- logout -->
                                 <?php if($_SESSION['role']=="user" or $_SESSION['role']=="admin"): ?>
                                     <a href="logout.php" class="btn btn-outline-primary">Log out</a>
@@ -217,6 +217,7 @@
         </div>
     </div>
 </div>
+<!-- best seller  -->
 <div class="container-fluid mt-5">
     <div class="container">
         <div class="row">
@@ -232,13 +233,81 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 a0tgu">
+                                <div class="card border-0 bg-black">
                                     <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
                                     <div class="p-2">
-                                        <h6 class="fw-bold">hello</h6>
-                                        
+                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
                                     </div>
-                                    
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/g2.jpg" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center">hello</h6>
+                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
