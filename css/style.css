@@ -2201,7 +2201,7 @@ textarea.form-control-lg {
   background-size: contain;
   border: 1px solid rgba(28, 27, 34, 0.25);
   appearance: none;
-  /* color-adjust: exact; */
+  color-adjust: exact;
 }
 .form-check-input[type=checkbox] {
   border-radius: 0.25em;
@@ -10168,6 +10168,10 @@ textarea.form-control-lg {
 
 .index {
   z-index: 1000;
+}
+
+.h {
+  height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */

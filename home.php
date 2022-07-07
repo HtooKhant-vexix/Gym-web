@@ -43,7 +43,8 @@
             }
         
             if($_SESSION['role']=="admin"){
-                header('location: index.php?page=admin');
+                // header('location: index.php?page=admin');
+                header('location: admin-dashboard.php');
             }
         }
     }
@@ -58,7 +59,7 @@
                         <div class="container-fluid">
                             <a class="display-4 text-decoration-none me-4 fw-bold mb-1" href="#">VEX</a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon"><i class="fa fa-solid fa-bars text-primary fs-1"></i></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
