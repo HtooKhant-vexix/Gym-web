@@ -18,7 +18,7 @@
                         <div class="card-header border-0 bg-info">
                             <h1 class=" fw-bold text-light text-center" >Create new account</h1>
                         </div>
-                        <form action="index.php?page=" method="POST">
+                        <form action="" method="POST">
                             <div class="card-body bg-secondary p-4">
                                 <div class="mb-3">
                                     <div class="form-floating">

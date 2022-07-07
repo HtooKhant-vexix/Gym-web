@@ -10,6 +10,7 @@
 </head>
 
     <?php
+    session_start();
     include ('connect.php');
 
     // $_SESSION['role']="admin";
@@ -64,7 +65,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.php?page=home">Home</a>
+                                <a class="nav-link active" aria-current="page" href="home.php">Home</a>
                                 </li>
                                 <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">About</a>
@@ -101,7 +102,7 @@
                                                 </div>
                                                     <?php 
                                                        ?>
-                                                <form action="index.php?page=home" method="post" class="modal-body bg-dark border-primary">
+                                                <form action="home.php" method="post" class="modal-body bg-dark border-primary">
                                                     <div class="mb-3">
                                                         <div class="form-floating">
                                                             <input type="text" class="form-control" id="name" name="name" placeholder="Username">
@@ -148,7 +149,7 @@
                                                     <h1 class=" fw-bold text-light text-center" >Create new account</h1>
                                                     <button type="button" class="btn-close text-primary" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                                <form action="index.php?page=home" method="post" class="modal-body bg-dark border-primary">
+                                                <form action="home.php" method="post" class="modal-body bg-dark border-primary">
                                                     <div class="mb-3">
                                                         <div class="form-floating">
                                                             <input type="email" class="form-control" id="email" name="email" placeholder="Email">
