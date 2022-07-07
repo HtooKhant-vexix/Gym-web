@@ -12,9 +12,13 @@
     <?php
     session_start();
     include ('connect.php');
-
+    $_SESSION['role']="";
     // $_SESSION['role']="admin";
-    $_SESSION['role']="empty";
+    if($_SESSION['role']!="user"){
+        
+        $_SESSION['role']="empty";
+    }
+    
     $_SESSION['count']=0;
 
     if(isset($_POST['regbtn'])){
@@ -86,7 +90,7 @@
                                 <?php endif ?>
                                 <!-- register  name-->
                                 <?php if($_SESSION['count']== 1): ?>
-                                    <a href="logout.php" class="btn btn-outline-primary">Log out</a>
+                                    <a href="logout.php" class="btn btn-outline-primary ms-3">Log out</a>
                                     <span class="fs-5 text-white fw-bold ms-3 px-4 bg-secondary rounded rounded-pill border border-primary"> <?php echo $_SESSION['regname']?></span>
                                 <?php endif ?>
                                 <!-- Button trigger modal -->
@@ -656,11 +660,77 @@
         </div>
     </div>
 </div>
+
+<!-- test -->
+
+<div class="container-fluid mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card bg-transparent">
+                    <div class="card-header bg-transparent d-flex justify-content-between bg-transparent border-bottom border-primary">
+                        <h4 class=" text-primary h2 fw-bold">Protein</h4>
+                        <div class="div">
+                            <i class=" fa fa-solid fa-angle-left fs-1 px-3 text-primary"></i>
+                            <i class=" fa fa-solid fa-angle-right px-3 fs-1 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                        <?php
+                            $select=mysqli_query($conn,"SELECT * FROM tblproduct ORDER BY reg_date DESC LIMIT 3");
+                            while($row=mysqli_fetch_assoc($select))
+                            {
+                            ?>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/<?php echo $row['image']; ?>" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center"><?php echo $row['name']; ?></h6>
+                                        <p class="text-center text-white-50 mb-0"><?php echo $row['price']; ?>MMK</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary"> <a href="index.php?page=product_detail&itemid=<?php echo $row['id']; ?>" class=" text-decoration-none text-black" >Detail</a></button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                                }
+                                ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- test end -->
+
 <div class="container-fluid">
     <div class="container">
         <div class="row">
             <div class="col">
-                
+            <?php
+          $select=mysqli_query($conn,"SELECT * FROM tblproduct ORDER BY reg_date DESC LIMIT 3");
+          while($row=mysqli_fetch_assoc($select))
+          {
+          ?>
+          <div class="col-md-4">
+            <div class="product-item" style="background: #fafafa;">
+              <a href="#"><img src="photo/<?php echo $row['image']; ?>" alt=""></a>
+              <div class="down-content">
+                <a href="index.php?page=product_detail&itemid=<?php echo $row['id']; ?>"><h4><?php echo $row['name']; ?></h4></a>
+                <h6><?php echo $row['price']; ?> MMK</h6>
+                <p><?php echo $row['detail']; ?></p>
+                <span>Reviews (24)</span>
+              </div>
+            </div>
+          </div>
+          <?php
+        }
+          ?>
             </div>
         </div>
     </div>

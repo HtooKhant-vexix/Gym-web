@@ -22,7 +22,7 @@ $sql=mysqli_query($conn, "SELECT * FROM user");
         }
     </style>
 </head>
-<body class="">
+<body class="bg-dark">
 <?php   
     $user_status=false;
     if(isset($_POST['ubtn'])){
@@ -67,7 +67,7 @@ $sql=mysqli_query($conn, "SELECT * FROM user");
                     </div>
                 </div>
                 <div class="list-group list-group-flush mt-5">
-                    <a href="admin-dashboard.php" class="py-3 text-white list-group-item list-group-item-action fw-bold" aria-current="true">
+                    <a href="admin-dashboard.php" class="py-3 text-white list-group-item list-group-item-action fw-bold border-primary" aria-current="true">
                         Dashboard
                     </a>
                     <a href="user.php" class="py-3 list-group-item list-group-item-action active fw-bold  text-white border-primary ">User</a>
@@ -75,14 +75,14 @@ $sql=mysqli_query($conn, "SELECT * FROM user");
                 </div>
             </div>
             <div class="col-8 col-lg-10 overflow-scroll h">
-                <div class="container-fluid">
+                <div class="container-fluid mt-4">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header bg-success">
+                            <div class="card border-0 rounded">
+                                <div class="card-header bg-black">
                                     <div class="row">
                                         <div class="col-md-6">
-                                                <h3 class="card-title"><a href="admin-dashboard.php" style="text-decoration: none;" class="text-white">Admin dashboard</a></h3>
+                                                <h3 class="card-title"><a href="admin-dashboard.php" style="text-decoration: none;" class="text-white fw-bold">User list</a></h3>
                                         </div>
                                         <div class="col-md-6">
                                             <form action="logout.php" method="POST">
@@ -91,11 +91,10 @@ $sql=mysqli_query($conn, "SELECT * FROM user");
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body bg-secondary">
                                     <div class="row">
                                         <div class="col-12">
-                                            <h5>User List</h5>
-                                            <table class="table table-bordered table-hover">
+                                            <table class="table table-bordered table-hover bg-white mb-0 rounded">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
@@ -125,31 +124,36 @@ $sql=mysqli_query($conn, "SELECT * FROM user");
                                 </div>
                             </div>
                             <?php if($user_status == true): ?>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Edition</h4>
+                                <div class="card mt-4 border-0 shadow w-25">
+                                    <div class="card-header bg-black">
+                                        <h4 class="text-white fw-bold">Edition</h4>
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">
                                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                                 <input type="hidden" value="<?php echo $uid?>" name="idd">
-                                            <label>Name</label>
-                                            <input type="text" name="upname" value="<?php echo  $uname; ?>" class="form-control">
-                                            <label>Email</label>
-                                            <input type="text" name="upemail" value="<?php echo  $uemail; ?>"  class="form-control">
-                                            <label>Role</label>
-                                            <select class="form-control" name = "sel">
-                                                <option>Select user role</option>
-                                                <option  name="admin" 
-                                                <?php if($urole=="admin"): ?> selected <?php endif ?>
-                                                >admin</option>
-                                                <option name="user"
-                                                <?php if($urole=="user"): ?> selected <?php endif ?>
-                                                >user</option>
-                                            </select>
+                                                <div class="mb-3"><label>Name</label>
+                                                <input type="text" name="upname" value="<?php echo  $uname; ?>" class="form-control">
+                                                </div>
+                                                <div class="mb-3">
+                                                <label>Email</label>
+                                                <input type="text" name="upemail" value="<?php echo  $uemail; ?>"  class="form-control">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label>Role</label>
+                                                <select class="form-control" name = "sel">
+                                                    <option>Select user role</option>
+                                                    <option  name="admin" 
+                                                    <?php if($urole=="admin"): ?> selected <?php endif ?>
+                                                    >admin</option>
+                                                    <option name="user"
+                                                    <?php if($urole=="user"): ?> selected <?php endif ?>
+                                                    >user</option>
+                                                </select>
+                                                </div>
                                         </div>
                                     </div>
-                                    <div class="card-footer">
+                                    <div class="card-footer bg-black">
                                         <input type="submit" value="Update" class="btn btn-primary float-end" name="ubtn">
                                     </div>
                                 </div>
