@@ -1,8 +1,6 @@
 <?Php
 session_start();
 
-
-
 ?>
 
 
@@ -37,7 +35,7 @@ session_start();
                         Dashboard
                     </a>
                     <a href="user.php" class="py-3 list-group-item list-group-item-action fw-bold  text-white border-primary ">User</a>
-                    <a href="update.php" class="py-3 list-group-item list-group-item-action fw-bold  text-white border-primary ">Update data</a>
+                    <a href="productList.php" class="py-3 list-group-item list-group-item-action fw-bold  text-white border-primary ">Update data</a>
                 </div>
             </div>
             <div class="col-8 col-lg-10 overflow-scroll h bg-dark">

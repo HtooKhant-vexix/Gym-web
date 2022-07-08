@@ -71,7 +71,7 @@ $sql=mysqli_query($conn, "SELECT * FROM user");
                         Dashboard
                     </a>
                     <a href="user.php" class="py-3 list-group-item list-group-item-action active fw-bold  text-white border-primary ">User</a>
-                    <a href="update.php" class="py-3 list-group-item list-group-item-action fw-bold text-white border-primary ">Update data</a>
+                    <a href="productList.php" class="py-3 list-group-item list-group-item-action fw-bold text-white border-primary ">Update data</a>
                 </div>
             </div>
             <div class="col-8 col-lg-10 overflow-scroll h">
@@ -85,9 +85,51 @@ $sql=mysqli_query($conn, "SELECT * FROM user");
                                                 <h3 class="card-title"><a href="admin-dashboard.php" style="text-decoration: none;" class="text-white fw-bold">User list</a></h3>
                                         </div>
                                         <div class="col-md-6">
-                                            <form action="logout.php" method="POST">
-                                                <button type="submit" class="btn btn-light float-end" name="logoutbtn" onclick="return confirm('Are you sure?');">Logout</button>
+                                            <form action="logout.php" class="d-flex justify-content-end" method="POST">
+                                                <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                    Add user
+                                                </button>
+                                                <button type="submit" class="btn btn-danger ms-3" name="logoutbtn" onclick="return confirm('Are you sure?');">Logout</button>
                                             </form>
+                                                <!-- Modal -->
+                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header bg-secondary" >
+                                                        <h5 class="modal-title fw-bold fs-4 text-white" id="staticBackdropLabel">Add user</h5>
+                                                        <!-- <div class="">
+                                                            <button class="btn btn-secondary" href=""></button>
+                                                        </div> -->
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="upload.php" method="POST" enctype="multipart/form-data">
+                                                            <div class="mb-3">
+                                                                <label for="" class="form-label">Name</label>
+                                                                <input type="text" class="form-control" name="name">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="" class="form-label">Price</label>
+                                                                <input type="text" class="form-control" name="price">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="" class="form-label">Details</label>
+                                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detail"></textarea>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="" class="form-label">Photo</label>
+                                                                <input type="file" class="form-control" name="photo">
+                                                            </div>
+                                                        
+                                                    </div>
+                                                    <div class="modal-footer bg-secondary">
+                                                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary px-4">Add</button>
+                                                    </div>
+                                                    </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
