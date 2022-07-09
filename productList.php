@@ -2,8 +2,46 @@
 session_start();
 include('connect.php');
 
-?>
+$user_status=false;
+if(isset($_GET['id_update'])){
+    $user_status="true";
+    $uid = $_GET['id_update'];
+    $update = mysqli_query($conn, "SELECT * FROM tblproduct WHERE id=$uid");
+    $uuser = mysqli_fetch_assoc($update);
+    $upn = $uuser['name'];
+    $upi = $uuser['image'];
+    $upp = $uuser['price'];
+    $upd = $uuser['p_detail'];
+}
 
+if(isset($_POST['ubtn'])){
+    $upname=$_POST['upn'];
+    $upprice = $_POST['upp'];
+    $updetail = $_POST['upd'];
+    $id = $_POST['idd'];
+    $upimg = $_FILES['uimg']['name'];
+    $tmp = $_FILES["uimg"]["tmp_name"];
+    $type = $_FILES["uimg"]["type"];
+
+
+
+    $user_update=mysqli_query($conn, "UPDATE tblproduct SET name='$upname', price='$upprice', p_detail='$updetail', image='$upimg' WHERE id=$id");
+    if($user_update){
+          if($type == "image/jpeg" or $type == "image/png" or $type == "image/gif"){
+        move_uploaded_file($tmp, "image/$pname");
+        echo "success";
+    }else{
+        echo "error";
+    }
+        header('location: productList.php');
+        echo "<script>
+        swal('Good job!', 'You clicked the button!', 'succ');
+    </script>";
+    }else{
+        die('ERROR:'. mysqli_error($conn));
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +57,7 @@ include('connect.php');
         }
     </style>
 </head>
-<body class="bg-dark">
+<body class="bg-white">
     <div class="container-fluid">
         <div class="row d-flex h-100">
             <div class="col-4 col-lg-2 overflow-scroll bg-black h">
@@ -42,7 +80,7 @@ include('connect.php');
             <div class="col-8 col-lg-10 overflow-scroll h">
             <div class="row">
                 <div class="col">
-                    <div class="card mt-5 border-0 bg-dark">
+                    <div class="card mt-3 border-0 bg-dark">
                         <div class="card-header d-flex justify-content-between bg-dark border-bottom border-primary">
                             <h1 class="text-white fw-bold">
                                 Product list
@@ -121,7 +159,10 @@ include('connect.php');
                                     <td><?php echo $select['name'] ?></td>
                                     <td><?php echo $select['price'] ?></td>
                                     <td><?php echo $select['p_detail'] ?></td>
-                                    <td>action</td>
+                                    <td>
+                                        <a href="productList.php?id_update=<?php echo $select['id']; ?>" class="btn btn-primary">Edit</a>
+                                        <a href="delete.php?pdelid=<?php echo $select['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                    </td>
                                 </tr>
                                 <?php endwhile ?>
                             </table>
@@ -129,6 +170,39 @@ include('connect.php');
                         
                     </div>
                     
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                <?php if($user_status == true): ?>
+                            <div class="card w-25 mt-4 border-0">
+                                <div class="card-body bg-black">
+                                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <input type="hidden" value="<?php echo $uid?>" name="idd">
+                                            <label for="" class="form-label text-white">Name</label>
+                                            <input type="text" value="<?php echo $upn ?>" class="form-control" name="upn">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="" class="form-label text-white">Price</label>
+                                            <input type="text" value="<?php echo $upp ?>" class="form-control" name="upp">
+                                        </div>
+                                            <div class="mb-3">
+                                                <label for="" class="form-label text-white">Details</label>
+                                                <textarea class="form-control"  id="exampleFormControlTextarea1" rows="3" name="upd"><?php echo $upd ?></textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="" class="form-label text-white">Photo</label>
+                                                <input type="file" name="uimg" value="<?php echo $upi ?>" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer bg-secondary">
+                                            <button type="submit" name="ubtn" class="btn btn-primary px-4">Update</button>
+                                        </div>
+                                </form>
+                                </div>
+                            </div>
+                            <?php endif ?>
                 </div>
             </div>
             </div>

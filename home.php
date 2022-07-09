@@ -678,7 +678,7 @@
                     <div class="card-body">
                         <div class="row">
                         <?php
-                            $select=mysqli_query($conn,"SELECT * FROM tblproduct ORDER BY reg_date DESC LIMIT 3");
+                            $select=mysqli_query($conn,"SELECT * FROM tblproduct ORDER BY reg_date DESC LIMIT 6");
                             while($row=mysqli_fetch_assoc($select))
                             {
                             ?>
@@ -708,33 +708,6 @@
 
 <!-- test end -->
 
-<div class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-            <?php
-          $select=mysqli_query($conn,"SELECT * FROM tblproduct ORDER BY reg_date DESC LIMIT 3");
-          while($row=mysqli_fetch_assoc($select))
-          {
-          ?>
-          <div class="col-md-4">
-            <div class="product-item" style="background: #fafafa;">
-              <a href="#"><img src="photo/<?php echo $row['image']; ?>" alt=""></a>
-              <div class="down-content">
-                <a href="index.php?page=product_detail&itemid=<?php echo $row['id']; ?>"><h4><?php echo $row['name']; ?></h4></a>
-                <h6><?php echo $row['price']; ?> MMK</h6>
-                <p><?php echo $row['detail']; ?></p>
-                <span>Reviews (24)</span>
-              </div>
-            </div>
-          </div>
-          <?php
-        }
-          ?>
-            </div>
-        </div>
-    </div>
-</div>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

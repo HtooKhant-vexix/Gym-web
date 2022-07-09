@@ -96,35 +96,38 @@ $sql=mysqli_query($conn, "SELECT * FROM user");
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                     <div class="modal-header bg-secondary" >
-                                                        <h5 class="modal-title fw-bold fs-4 text-white" id="staticBackdropLabel">Add user</h5>
+                                                        <h5 class="modal-title fw-bold fs-4 text-white"  id="staticBackdropLabel">Add user</h5>
                                                         <!-- <div class="">
                                                             <button class="btn btn-secondary" href=""></button>
                                                         </div> -->
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form action="upload.php" method="POST" enctype="multipart/form-data">
+                                                        <form action="userInsert.php" method="POST" enctype="multipart/form-data">
                                                             <div class="mb-3">
                                                                 <label for="" class="form-label">Name</label>
-                                                                <input type="text" class="form-control" name="name">
+                                                                <input type="text" class="form-control" name="addname">
                                                             </div>
                                                             <div class="mb-3">
-                                                                <label for="" class="form-label">Price</label>
-                                                                <input type="text" class="form-control" name="price">
+                                                                <label for="" class="form-label">Email</label>
+                                                                <input type="text" class="form-control" name="addemail">
                                                             </div>
                                                             <div class="mb-3">
-                                                                <label for="" class="form-label">Details</label>
-                                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detail"></textarea>
+                                                                <label for="" class="form-label">Password</label>
+                                                                <input type="password" class="form-control" name="addpassword">
                                                             </div>
                                                             <div class="mb-3">
-                                                                <label for="" class="form-label">Photo</label>
-                                                                <input type="file" class="form-control" name="photo">
+                                                                <label class="form-label">Role</label>
+                                                                <select class="form-control" name = "addrole">
+                                                                    <option>Select user role</option>
+                                                                    <option  name="admin">admin</option>
+                                                                    <option name="user">user</option>
+                                                                </select>
                                                             </div>
-                                                        
                                                     </div>
                                                     <div class="modal-footer bg-secondary">
                                                         <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary px-4">Add</button>
+                                                        <button type="submit" class="btn btn-primary px-4"  name="addbtn">Add</button>
                                                     </div>
                                                     </form>
                                                     </div>
