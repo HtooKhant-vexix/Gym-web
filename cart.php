@@ -1,8 +1,7 @@
 <?php
 // require_once('connection/db.php');
 // require_once('header.php');
-// require_once('function/cart_function.php');
-session_start();
+include('cart_function.php');
 include('connect.php');
 
 
@@ -15,12 +14,12 @@ $sid = session_id();
 
 
 
-$msg = (!empty($_GET['ms']) ? $_GET['ms'] : "");
-$shoppingReturnUrl = isset($_SESSION['shop_return_url']) ? $_SESSION['shop_return_url'] : '../index.php';
+// $msg = (!empty($_GET['ms']) ? $_GET['ms'] : "");
+// $shoppingReturnUrl = isset($_SESSION['shop_return_url']) ? $_SESSION['shop_return_url'] : '../index.php';
 
 $action = (isset($_GET['action']) && $_GET['action'] != '') ? $_GET['action'] : 'view';
 
-// $url=$_SESSION['shop_return_url'];
+// $url=$_SESSION['shop_return_url'];                                                     thatrtrtrtrtrtttttttttttttttttttttttttttttttttttttt
 
 // add portion
 if(@$_REQUEST['action']=='checkout')
@@ -37,20 +36,23 @@ if(isset($_REQUEST['btncal']))
 	updateCart($conn);
 }
 
-// switch ($action)
-// {
-// 	case 'add' :
-// 	addToCart($conn);
-// 	break;
-// 	case 'update' :
-// 	//echo $_SESSION['itmid']."++++++++";
-// 	updateCart();
-// 	break;
-// 	case 'delete':
-// 	deleteFromCart($cartid = 0, $conn);
-// 	break;
-// 	case 'view' :
-// }
+switch ($action)
+{
+	case 'add' :
+	addToCart($conn);
+	break;
+	
+	case 'update' :
+	//echo $_SESSION['itmid']."++++++++";
+	updateCart();
+	break;
+
+	case 'delete':
+	deleteFromCart($cartid = 0, $conn);
+	break;
+
+	case 'view' :
+}
 
 
 
@@ -60,9 +62,7 @@ if(isset($_REQUEST['btncal']))
 <head>
 <title> Shoping Cart Design Using Bootstrap 4.0 </title>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="custom.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <style type="text/css">
 	.Product-img img{
 width: 100%;
@@ -78,17 +78,17 @@ margin-top:100px;
 
 <?php
 
- // $typequan = $_REQUEST['typequan'];
- // $stqu = $_REQUEST['stqu'];
- // $itname = $_REQUEST['itname'];
+//  $typequan = $_REQUEST['typequan'];
+//  $stqu = $_REQUEST['stqu'];
+//  $itname = $_REQUEST['itname'];
 
  $typequan = (!empty($_REQUEST['typequan']) ? $_REQUEST['typequan'] : "");
  $stqu = (!empty($_REQUEST['stqu']) ? $_REQUEST['stqu'] : "");
  $itname = (!empty($_REQUEST['itname']) ? $_REQUEST['itname'] : "");
 
-// $cartContent = getCartContent();
-//   $numProduct = count($cartContent);
-//   if ($numProduct > 0 ) {
+$cartContent = getCartContent();
+  $numProduct = count($cartContent);
+  if ($numProduct > 0 ) {
 ?>
 
 
@@ -97,11 +97,11 @@ margin-top:100px;
 		<div class="container" >
 
       <div class="grid_5 grid_5 animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms" >
-        <?php if($typequan == ''){ } else { ?>
+        <!-- <?php if($typequan == ''){ } else { ?>
         <div class="alert alert-danger" style="font-size: 20px;">
         <strong>Oh snap!</strong> We have currently ( <?php echo $stqu; ?> ) qty in <?php echo $itname; ?> in stock. You type quantity is ( <?php echo $typequan; ?> ) qty.
         </div>
-        <?php } ?>
+        <?php } ?> -->
       </div>
 
 			<div class="row">
@@ -123,50 +123,78 @@ margin-top:100px;
 					</thead>
 
           <?php
+			//   $update = mysqli_query($conn, "SELECT * FROM tblproduct ");
+			//   $uuser = mysqli_fetch_assoc($update);
+			//   $product_name = $uuser['name'];
+			//   $p_detail = $uuser['p_detail'];
+			//   $price = $uuser['price'];
+			//   $image = $uuser['image'];
+                                $cart = mysqli_query($conn, "SELECT * FROM tblcart ");
+								$c = mysqli_fetch_assoc($cart);
+								
+								$total_price = $c['total_price'];
+								$cart_id = $c['cart_session_id'];
+			  					$product_id = $c['product_id'];
+			                    
+
+								// $sql2 ="SELECT * FROM tblproduct WHERE product_id = $sid";
+                                // $result = mysqli_query($conn, "SELECT * FROM tblproduct WHERE product_id = $cart_id");
+								// $r = mysqli_fetch_assoc($result);
+								// $product_name = $r['name'];
+								// $image = $r['image'];
+								// if($result){
+								// 	echo "hello";
+								// 	echo $product_name;
+								// 	echo $image;
+								// }
+
           	// $subTotal=0;
-        //   	for($i=0;$i<$numProduct;$i++)
-        //   	{
-        //   		extract($cartContent[$i]);
-        //   		//$subTotal+=$cunit*$ctqty;
+          	for($i=0;$i< $numProduct;$i++)
+          	{
+      			extract($cartContent[$i]);
+          	// 	$subTotal+=$cunit*$ctqty;
 
-        //   ?>
+          ?>
 
-          <tbody style="background: #fafafa;">
-<tr>
-<td>
-<div class="row">
-<div class="col-lg-2 Product-img">
-<img src="photo/<?php echo $image; ?>" alt="..." class="img-responsive"/>
-</div>
-<div class="col-lg-10">
-<h4 class="nomargin"><?php echo $product_name;?></h4>
-<p><?php echo $p_detail; ?></p>
-</div>
-</div>
-</td>
-<td> <?php echo $price; ?> </td>
-<td data-th="Quantity">
-<input type="number" class="form-control text-center" value="<?php echo $quantity; ?>" name="txtQty[]" id="txtQty[]">
-</td>
-<td><?php echo $total_price; ?></td>
-<td class="actions" data-th="" style="width:10%;">
 
-<button class="btn btn-info btn-sm" name="btncals"><i class="fa fa-refresh"></i></button>
+				<tbody style="background: #fafafa;">
+				<tr>
+					<td>
+						<div class="row">
+							<div class="col-lg-2 Product-img">
+							<img src="image/<?php echo $image ?>" alt="..." class="img-responsive"/>
+							</div>
+								<div class="col-lg-10">
+								<p><?php echo $p_detail; ?></p>
+								</div>
+						</div>
+					</td>
+					<td> <?php echo $price; ?> </td>
+					<td data-th="Quantity">
+					<input type="number" class="form-control text-center" value="<?php echo $quantity; ?>" name="txtQty[]" id="txtQty[]">
+					</td>
+						<?php 
+								
+						?>
+					<td><?php echo $total_price; ?></td>
+					<td class="actions" data-th="" style="width:10%;">
 
-		<input name="hidCartId[]" type="hidden" value="<?php echo $cart_id; ?>" />
-    <input name="hidProductId[]" type="hidden" value="<?php echo $product_id; ?>" />
-              
-              <a href="index.php?page=cart&action=delete&cid=<?php echo $cart_id; ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>
+						<button class="btn btn-info btn-sm" name="btncals"><i class="fa fa-refresh"></i></button>
 
-<!--<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>-->
-</td>
-</tr>
+							<input name="hidCartId[]" type="hidden" value="<?php echo $cart_id; ?>" />
+							<input name="hidProductId[]" type="hidden" value="<?php echo $product_id; ?>" />
+								
+							<a href="index.php?page=cart&action=delete&cid=<?php echo $cart_id; ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
 
-</tbody>
+					<!--<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>-->
+					</td>
+				</tr>
 
-<!-- <?php 
-		#}
- ?> -->
+				</tbody>
+
+			<?php 
+				}
+			?>
 
 <tfoot style="background: #fafafa;">
 <tr>
@@ -177,13 +205,13 @@ margin-top:100px;
           $result = $conn->query($sql)or die($conn->error);
           $rowgrand=$result->fetch_assoc();
           $mmkgrandtotal=number_format($rowgrand['GrandTotal']);
-          // while ($row = $result->fetch_assoc())
-          // {
-          //   //$mmktotal=$row['SUM(alltotal)'];
-          //   $mmktotall=number_format($row['SUM(alltotal)']);
-          //   //$_SESSION['alltotal']=$mmktotal;
-          // }
-          ?>
+          while ($row = $result->fetch_assoc())
+          {
+            //$mmktotal=$row['SUM(alltotal)'];
+            $mmktotall=number_format($row['SUM(alltotal)']);
+            //$_SESSION['alltotal']=$mmktotal;
+          }
+    ?>
 <td class="hidden-xs text-center" style="width:10%;"><strong>Total : <?php echo $mmkgrandtotal; ?></strong></td>
 <td>
 	<a href="index.php?page=cart&action=checkout" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>
@@ -208,13 +236,13 @@ margin-top:100px;
   		 	<input type="submit" name="btnbuy" value="Buy Now">&nbsp;
           <a href="index.php?page=product"><input type="button" name="" value="<  Continue Shopping" class="btn btn-primary"></a>
         </div>
-  		 </form>-->
+  		 </form> -->
 
 
-
-			<!--	<div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
+<!-- 
+				<div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
 					<a href="index.php?page=product"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
-				</div>&nbsp;-->
+				</div>&nbsp; -->
 
 
 				<div class="clearfix"> </div>
@@ -224,6 +252,6 @@ margin-top:100px;
 	</div>
 <!-- //checkout -->
 
-<?php #} ?>
+<?php } ?>
 <!-- footer -->
 

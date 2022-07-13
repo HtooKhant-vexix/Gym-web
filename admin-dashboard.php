@@ -31,9 +31,6 @@ session_start();
                     </div>
                 </div>
                 <div class="list-group list-group-flush mt-5">
-                    <a href="admin-dashboard.php" class="border-primary py-3 text-white list-group-item list-group-item-action active fw-bold" aria-current="true">
-                        Dashboard
-                    </a>
                     <a href="user.php" class="py-3 list-group-item list-group-item-action fw-bold  text-white border-primary ">User</a>
                     <a href="productList.php" class="py-3 list-group-item list-group-item-action fw-bold  text-white border-primary ">Update data</a>
                 </div>

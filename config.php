@@ -12,6 +12,14 @@
 			$mainpage='cart.php';
 			break;
 
+		case 'deliveryadd':
+			$mainpage='deliveryadd.php';
+			break;
+
+		case 'checkoutconfirm':
+			$mainpage='checkoutconfirm.php';
+			break;
+
 		default:
 		$mainpage='home.php';
 	}

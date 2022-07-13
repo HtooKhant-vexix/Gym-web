@@ -49,7 +49,7 @@
         
             if($_SESSION['role']=="admin"){
                 // header('location: index.php?page=admin');
-                header('location: admin-dashboard.php');
+                header('location: user.php');
             }
         }
     }
@@ -238,85 +238,27 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
+                        <?php
+                            $select=mysqli_query($conn,"SELECT * FROM tblproduct ORDER BY reg_date DESC LIMIT 6");
+                            while($row=mysqli_fetch_assoc($select))
+                            {
+                            ?>
                             <div class="col-6 col-md-3 col-lg-2">
                                 <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <img src="./image/<?php echo $row['image']; ?>" height="" class=" card-img-top" alt="">
                                     <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                        <h6 class="fw-bold text-white text-center"><?php echo $row['name']; ?></h6>
+                                        <p class="text-center text-white-50 mb-0"><?php echo $row['price']; ?>MMK</p>
                                     </div>
                                     <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"> <a href="index.php?page=product_detail&itemid=<?php echo $row['product_id']; ?>" class="text-decoration-none text-black" >Detail</a></button>
                                         <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                           
+                            <?php
+                                }
+                                ?>
                         </div>
                     </div>
                 </div>
@@ -347,85 +289,27 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
+                        <?php
+                            $select=mysqli_query($conn,"SELECT * FROM tblproduct ORDER BY reg_date DESC LIMIT 6");
+                            while($row=mysqli_fetch_assoc($select))
+                            {
+                            ?>
                             <div class="col-6 col-md-3 col-lg-2">
                                 <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <img src="./image/<?php echo $row['image']; ?>" height="" class=" card-img-top" alt="">
                                     <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                        <h6 class="fw-bold text-white text-center"><?php echo $row['name']; ?></h6>
+                                        <p class="text-center text-white-50 mb-0"><?php echo $row['price']; ?>MMK</p>
                                     </div>
                                     <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"> <a href="index.php?page=product_detail&itemid=<?php echo $row['product_id']; ?>" class=" text-decoration-none text-black" >Detail</a></button>
                                         <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                           
+                            <?php
+                                }
+                                ?>
                         </div>
                     </div>
                 </div>
@@ -433,6 +317,8 @@
         </div>
     </div>
 </div>
+
+
 <div class="container-fluid mt-5">
     <div class="container">
         <div class="row">
@@ -447,85 +333,27 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
+                        <?php
+                            $select=mysqli_query($conn,"SELECT * FROM tblproduct ORDER BY reg_date DESC LIMIT 6");
+                            while($row=mysqli_fetch_assoc($select))
+                            {
+                            ?>
                             <div class="col-6 col-md-3 col-lg-2">
                                 <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
+                                    <img src="./image/<?php echo $row['image']; ?>" height="" class=" card-img-top" alt="">
                                     <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
+                                        <h6 class="fw-bold text-white text-center"><?php echo $row['name']; ?></h6>
+                                        <p class="text-center text-white-50 mb-0"><?php echo $row['price']; ?>MMK</p>
                                     </div>
                                     <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
+                                        <button class="btn btn-primary"> <a href="index.php?page=product_detail&itemid=<?php echo $row['product_id']; ?>" class="text-decoration-none text-black" >Detail</a></button>
                                         <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                           
+                            <?php
+                                }
+                                ?>
                         </div>
                     </div>
                 </div>
@@ -533,6 +361,7 @@
         </div>
     </div>
 </div>
+
 <div class="container-fluid mt-5">
     <div class="container">
         <div class="row d-flex justify-content-around" >
@@ -560,108 +389,6 @@
         </div>
     </div>
 </div>
-<div class="container-fluid mt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="card bg-transparent">
-                    <div class="card-header bg-transparent d-flex justify-content-between bg-transparent border-bottom border-primary">
-                        <h4 class=" text-primary h2 fw-bold">Protein</h4>
-                        <div class="div">
-                            <i class=" fa fa-solid fa-angle-left fs-1 px-3 text-primary"></i>
-                            <i class=" fa fa-solid fa-angle-right px-3 fs-1 text-primary"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-3 col-lg-2">
-                                <div class="card border-0 bg-black">
-                                    <img src="./image/equi1.jpg" height="" class=" card-img-top" alt="">
-                                    <div class="p-2">
-                                        <h6 class="fw-bold text-white text-center">Lorem</h6>
-                                        <p class="text-center text-white-50 mb-0">200000mmk</p>
-                                    </div>
-                                    <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary">Detail</button>
-                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- test -->
 
 <div class="container-fluid mt-5">
     <div class="container">
@@ -690,7 +417,52 @@
                                         <p class="text-center text-white-50 mb-0"><?php echo $row['price']; ?>MMK</p>
                                     </div>
                                     <div class=" justify-content-between d-flex mb-2 px-2">
-                                        <button class="btn btn-primary"> <a href="index.php?page=product_detail&itemid=<?php echo $row['id']; ?>" class=" text-decoration-none text-black" >Detail</a></button>
+                                        <button class="btn btn-primary"> <a href="index.php?page=product_detail&itemid=<?php echo $row['product_id']; ?>" class=" text-decoration-none text-black" >Detail</a></button>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                                }
+                                ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- test -->
+
+<div class="container-fluid mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card bg-transparent">
+                    <div class="card-header bg-transparent d-flex justify-content-between bg-transparent border-bottom border-primary">
+                        <h4 class=" text-primary h2 fw-bold">Home workout</h4>
+                        <div class="div">
+                            <i class=" fa fa-solid fa-angle-left fs-1 px-3 text-primary"></i>
+                            <i class=" fa fa-solid fa-angle-right px-3 fs-1 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                        <?php
+                            $select=mysqli_query($conn,"SELECT * FROM tblproduct ORDER BY reg_date DESC LIMIT 6");
+                            while($row=mysqli_fetch_assoc($select))
+                            {
+                            ?>
+                            <div class="col-6 col-md-3 col-lg-2">
+                                <div class="card border-0 bg-black">
+                                    <img src="./image/<?php echo $row['image']; ?>" height="" class=" card-img-top" alt="">
+                                    <div class="p-2">
+                                        <h6 class="fw-bold text-white text-center"><?php echo $row['name']; ?></h6>
+                                        <p class="text-center text-white-50 mb-0"><?php echo $row['price']; ?>MMK</p>
+                                    </div>
+                                    <div class=" justify-content-between d-flex mb-2 px-2">
+                                        <button class="btn btn-primary"> <a href="index.php?page=product_detail&itemid=<?php echo $row['product_id']; ?>" class=" text-decoration-none text-black" >Detail</a></button>
                                         <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></button>
                                     </div>
                                 </div>

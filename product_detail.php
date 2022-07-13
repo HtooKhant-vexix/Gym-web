@@ -2,7 +2,7 @@
    session_start();
   include('connect.php');
   $productid = $_REQUEST['itemid'];
-  $selectp = mysqli_query($conn,"SELECT * FROM tblproduct WHERE tblproduct.id = '" . $productid . "'");
+  $selectp = mysqli_query($conn,"SELECT * FROM tblproduct WHERE tblproduct.product_id = '" . $productid . "'");
   $rowp1 = mysqli_fetch_assoc ($selectp);
 
 ?>

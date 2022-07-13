@@ -2,11 +2,12 @@
 session_start();
 include('connect.php');
 
+
 $user_status=false;
 if(isset($_GET['id_update'])){
     $user_status="true";
     $uid = $_GET['id_update'];
-    $update = mysqli_query($conn, "SELECT * FROM tblproduct WHERE id=$uid");
+    $update = mysqli_query($conn, "SELECT * FROM tblproduct WHERE product_id=$uid");
     $uuser = mysqli_fetch_assoc($update);
     $upn = $uuser['name'];
     $upi = $uuser['image'];
@@ -25,7 +26,7 @@ if(isset($_POST['ubtn'])){
 
 
 
-    $user_update=mysqli_query($conn, "UPDATE tblproduct SET name='$upname', price='$upprice', p_detail='$updetail', image='$upimg' WHERE id=$id");
+    $user_update=mysqli_query($conn, "UPDATE tblproduct SET name='$upname', price='$upprice', p_detail='$updetail', image='$upimg' WHERE product_id=$id");
     if($user_update){
           if($type == "image/jpeg" or $type == "image/png" or $type == "image/gif"){
         move_uploaded_file($tmp, "image/$pname");
@@ -70,9 +71,6 @@ if(isset($_POST['ubtn'])){
                     </div>
                 </div>
                 <div class="list-group list-group-flush mt-5">
-                    <a href="admin-dashboard.php" class="py-3 text-white list-group-item list-group-item-action fw-bold border-primary" aria-current="true">
-                        Dashboard
-                    </a>
                     <a href="user.php" class="py-3 list-group-item list-group-item-action fw-bold  text-white border-primary ">User</a>
                     <a href="productList.php" class="py-3 list-group-item active list-group-item-action fw-bold text-white border-primary ">Update data</a>
                 </div>
@@ -152,7 +150,7 @@ if(isset($_POST['ubtn'])){
                                 </tr>
                                 <?php while($select = mysqli_fetch_assoc($sql)): ?>
                                 <tr>
-                                    <td><?php echo $select['id'] ?></td>
+                                    <td><?php echo $select['product_id'] ?></td>
                                     <td>
                                         <img src="./image/<?php echo $select['image'] ?>" height="100" width="100" alt="">
                                     </td>
@@ -160,8 +158,8 @@ if(isset($_POST['ubtn'])){
                                     <td><?php echo $select['price'] ?></td>
                                     <td><?php echo $select['p_detail'] ?></td>
                                     <td>
-                                        <a href="productList.php?id_update=<?php echo $select['id']; ?>" class="btn btn-primary">Edit</a>
-                                        <a href="delete.php?pdelid=<?php echo $select['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                        <a href="productList.php?id_update=<?php echo $select['product_id']; ?>" class="btn btn-primary">Edit</a>
+                                        <a href="delete.php?pdelid=<?php echo $select['product_id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
                                     </td>
                                 </tr>
                                 <?php endwhile ?>
